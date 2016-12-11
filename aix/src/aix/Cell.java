@@ -5,8 +5,7 @@ public class Cell {
 	private Cell up, down, left, right;
 	
 	private boolean isOccupied;
-	private Ant ant;
-	private Resource resource;
+	private OccupyingObject object;
 	private int x, y;
 	
 	public Cell(int x, int y) {
@@ -19,27 +18,23 @@ public class Cell {
 		return isOccupied;
 	}
 	
-	public void occupy(Ant a) {
+	public void occupy(OccupyingObject o) {
 		if (!isOccupied) {
-			ant = a;
-			ant.setCell(this);
+			object = o;
+			object.setCell(this);
 			isOccupied = true;
 		} else {
 			throw new IllegalAccessError("Cell already populated.");
 		}
 	}
 	
-	public void removeAnt() {
-		ant = null;
+	public void removeObject() {
+		object = null;
 		isOccupied = false;
 	}
 	
-	public Object getObject() {
-		if (resource != null) {
-			return resource;
-		} else {
-			return ant;
-		}
+	public OccupyingObject getObject() {
+		return object;
 	}
 	
 	public String toString() {
