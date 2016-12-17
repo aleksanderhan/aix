@@ -3,15 +3,15 @@ package aix.actions;
 import aix.Ant;
 import aix.Cell;
 
-public class MoveDown extends Intent implements Action {
+public class MoveUpRight extends Intent implements Action {
 	
-	public MoveDown(Ant ant) {
+	public MoveUpRight(Ant ant) {
 		super(ant);
 	}
 	
 	@Override
 	public boolean canPerform() {
-		Cell nextCell = ant.getCell().getDown();
+		Cell nextCell = ant.getCell().getUp();
 		if (nextCell == null) {
 			return false;
 		} else if (nextCell.isOccupied()){
@@ -26,7 +26,7 @@ public class MoveDown extends Intent implements Action {
 		if (canPerform()) {
 			Cell currentCell = ant.getCell();
 			currentCell.removeObject();
-			Cell nextCell = currentCell.getDown();
+			Cell nextCell = currentCell.getUp();
 			nextCell.occupy(ant);
 			ant.setCell(nextCell);
 		}

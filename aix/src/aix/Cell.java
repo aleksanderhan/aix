@@ -2,7 +2,7 @@ package aix;
 
 public class Cell {
 	
-	private Cell up, down, left, right;
+	private Cell up, down, left, right, upLeft, upRight, downLeft, downRight;
 	
 	private boolean isOccupied;
 	private OccupyingObject object;
@@ -45,6 +45,14 @@ public class Cell {
 		}
 	}
 	
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
+	}
+	
 	public Cell getUp() {
 		return up;
 	}
@@ -59,6 +67,22 @@ public class Cell {
 	
 	public Cell getRight() {
 		return right;
+	}
+	
+	public Cell getUpLeft() {
+		return upLeft;
+	}
+	
+	public Cell getUpRight() {
+		return upRight;
+	}
+	
+	public Cell getDownLeft() {
+		return downLeft;
+	}
+	
+	public Cell getDownRight() {
+		return downRight;
 	}
 	
 	public void setUp(Cell up) {
@@ -76,4 +100,21 @@ public class Cell {
 	public void setLeft(Cell left) {
 		this.left = left;
 	}
+	
+	public void setUpLeft(Cell upLeft) {
+		this.upLeft = upLeft;
+	}
+	
+	public void setUpRight(Cell upRight) {
+		this.upRight = upRight;
+	}
+	
+	public void setDownLeft(Cell downLeft) {
+		this.downLeft = downLeft;
+	}
+	
+	public void setDownRight(Cell downRight) {
+		this.downRight = downRight;
+	}
+	
 }

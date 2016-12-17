@@ -25,7 +25,7 @@ public class MoveRight extends Intent implements Action {
 	public void perform() {
 		if (canPerform()) {
 			Cell currentCell = ant.getCell();
-			currentCell.removeAnt();
+			currentCell.removeObject();
 			Cell nextCell = currentCell.getRight();
 			nextCell.occupy(ant);
 			ant.setCell(nextCell);	

@@ -25,7 +25,7 @@ public class MoveUp extends Intent implements Action {
 	public void perform() {
 		if (canPerform()) {
 			Cell currentCell = ant.getCell();
-			currentCell.removeAnt();
+			currentCell.removeObject();
 			Cell nextCell = currentCell.getUp();
 			nextCell.occupy(ant);
 			ant.setCell(nextCell);

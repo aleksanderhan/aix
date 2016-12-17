@@ -8,7 +8,7 @@ import aix.actions.MoveLeft;
 import aix.actions.MoveRight;
 import aix.actions.MoveUp;
 
-public class Ant {
+public class Ant implements OccupyingObject {
 	
 	private Action futureAction;
 	private Cell cell;
@@ -40,6 +40,7 @@ public class Ant {
 		
 	}
 	
+	@Override
 	public void setCell(Cell c) {
 		cell = c;
 	}
@@ -47,4 +48,5 @@ public class Ant {
 	public Cell getCell() {
 		return cell;
 	}
+
 }
