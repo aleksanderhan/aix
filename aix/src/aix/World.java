@@ -40,6 +40,26 @@ public class World{
 				} else {
 					grid[i][j].setRight(grid[i][j+1]);
 				}
+				if (i==0 || j==0) {
+					grid[i][j].setUpLeft(null);
+				} else {
+					grid[i][j].setUpLeft(grid[i-1][j-1]);
+				}
+				if (i==0 || j==m-1) {
+					grid[i][j].setUpRight(null);
+				} else {
+					grid[i][j].setUpRight(grid[i-1][j+1]);
+				}
+				if (i==n-1 || j==0) {
+					grid[i][j].setDownLeft(null);
+				} else {
+					grid[i][j].setDownLeft(grid[i+1][j-1]);
+				}
+				if (i==n-1 || j==m-1) {
+					grid[i][j].setDownRight(null);
+				} else {
+					grid[i][j].setDownRight(grid[i+1][j+1]);
+				}
 			}
 		}
 	}
