@@ -39,7 +39,13 @@ public class Cell {
 	
 	public String toString() {
 		if (isOccupied) {
-			return "X";
+			if (object.getType() == "ant") {
+				return "X";
+			} else if (object.getType() == "resource") {
+				return "R";
+			} else {
+				return null;
+			}
 		} else {
 			return ".";
 		}

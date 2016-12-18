@@ -10,8 +10,12 @@ public class Resource implements OccupyingObject {
 	}
 	
 	public int take(int n) {
-		amount -= n;
-		return n;
+		if (amount - n >= 0) {
+			amount -= n;
+			return n;
+		} else {
+			return amount;
+		}
 	}
 	
 	public void setCell(Cell c) {

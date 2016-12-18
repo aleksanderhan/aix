@@ -36,17 +36,19 @@ public class Ant implements OccupyingObject {
 			return new MoveLeft(this);
 		} else {
 			return new MoveRight(this);
-		}
-		
+		}		
 	}
 	
-	@Override
 	public void setCell(Cell c) {
 		cell = c;
 	}
 	
 	public Cell getCell() {
 		return cell;
+	}
+	
+	public String getType() {
+		return "ant";
 	}
 
 }
