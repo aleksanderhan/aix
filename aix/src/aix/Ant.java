@@ -2,11 +2,7 @@ package aix;
 
 import java.util.Random;
 
-import aix.actions.Action;
-import aix.actions.MoveDown;
-import aix.actions.MoveLeft;
-import aix.actions.MoveRight;
-import aix.actions.MoveUp;
+import aix.actions.*;
 
 public class Ant implements OccupyingObject {
 	
@@ -27,16 +23,24 @@ public class Ant implements OccupyingObject {
 	
 	public Action randomMovement() {
 		Random rnd = new Random();
-		int rndInt = rnd.nextInt(4);
+		int rndInt = rnd.nextInt(8);
 		if (rndInt == 0) {
 			return new MoveUp(this);
 		} else if (rndInt == 1) {
 			return new MoveDown(this);
 		} else if (rndInt == 2) {
 			return new MoveLeft(this);
-		} else {
+		} else if (rndInt == 3){
 			return new MoveRight(this);
-		}		
+		} else if (rndInt == 4) {
+			return new MoveUpRight(this);
+		} else if (rndInt == 5) {
+			return new MoveUpLeft(this);
+		} else if (rndInt == 6) {
+			return new MoveDownRight(this);
+		} else {
+			return new MoveDownLeft(this);
+		}
 	}
 	
 	public void setCell(Cell c) {
