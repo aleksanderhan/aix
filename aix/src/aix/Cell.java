@@ -39,9 +39,9 @@ public class Cell {
 	
 	public String toString() {
 		if (isOccupied) {
-			if (object.getType() == "ant") {
+			if (object.getType().equals("ant")) {
 				return "X";
-			} else if (object.getType() == "resource") {
+			} else if (object.getType().equals("resource")) {
 				return "R";
 			} else {
 				return null;
