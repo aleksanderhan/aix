@@ -30,8 +30,6 @@ public class Game extends Application {
         
         GraphicsContext gc = canvas.getGraphicsContext2D();
         
-        final long startNanoTime = System.nanoTime();
-        
         new AnimationTimer()
         {
             public void handle(long currentNanoTime)
